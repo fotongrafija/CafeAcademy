@@ -46,7 +46,7 @@ export const Cart = () => {
             className="checkoutBtn"
             onClick={() => {
               checkout();
-              navigate("/checkout");
+              navigate("/");
             }}
           >
             Poruči!

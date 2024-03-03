@@ -12,7 +12,7 @@ export const Navbar = () => {
         
         {/* <Link to="/"> Shop </Link>
         <Link to="/contact"> Contact </Link> */}
-        <Link to="/cart">
+        <Link to="/">
           <SignIn size={32} />
         </Link>
       </div>
