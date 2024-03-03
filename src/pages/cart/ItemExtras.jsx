@@ -8,10 +8,17 @@ import { PRODUCTS } from '../../products'
 
 export const ItemExtras = (props) => {
     
-    
+    // const { extras, beans } = props.data
+
     const [extras, setExtras] = useState('')
     const [beans, setBeans] = useState('')
-    
+
+    const extraPrice = PRODUCTS.map((product) => {
+        
+        return  product.extra
+    })
+    console.log(Number(extras))
+    console.log(beans)
     const handleExtrasChange = (e) => {
         setExtras(e.target.value)
     }
@@ -19,8 +26,8 @@ export const ItemExtras = (props) => {
     const handleBeansChange = (e) => {
         setBeans(e.target.value)
     }
-    console.log(Number(extras))
-    console.log(beans)
+    // console.log(Number(extras))
+    // console.log(beans)
 
   return (
     <div className='itemExtras'>
@@ -28,8 +35,8 @@ export const ItemExtras = (props) => {
             <select value={extras} onChange={handleExtrasChange} id="extras" name="extras">
             <option value={0}>-</option> 
             <option value={1}>Mleko</option>
-            <option value={2}>Bademovo mleko</option>
-            <option value={3}>Sojino mleko</option>
+            <option value={2}>Bademovo</option>
+            <option value={3}>Sojino</option>
             </select>
         <label htmlFor="beans">Zrno:</label>
             <select value={beans} onChange={handleBeansChange} id="beans" name="beans">

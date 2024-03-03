@@ -39,6 +39,7 @@ export const CartItem = (props) => {
         setSizePrice(0);
     }
   };
+  console.log(sizePrice)
  
   return (<>
   

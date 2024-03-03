@@ -2,7 +2,7 @@
 // cart.jsx
 
 
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ShopContext } from "../../context/shop-context";
 import { CartItem } from "./cart-item";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ import "./cart.css";
 import './itemExtras.css'
 
 export const Cart = () => {
-  const { cartItems, getTotalCartAmount, checkout, getSizePrice } = useContext(ShopContext);
+  const { cartItems, getTotalCartAmount, checkout, getSizePrice, size } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
   const navigate = useNavigate();
   const sizeAmount = getSizePrice()
@@ -19,7 +19,8 @@ export const Cart = () => {
   // PRODUCTS is an array of products
   return PRODUCTS.find((product) => product.id === id);
   };
-
+  
+  
   return (
     <div className="cart">
       <div>

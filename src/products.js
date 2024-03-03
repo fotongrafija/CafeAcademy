@@ -24,9 +24,9 @@ export const PRODUCTS = [
       sizeL: 35.0
     },
     extra: {
-      milk: 'Mleko',
-      almond: 'Bademovo mleko',
-      soy: 'Sojino mleko'
+      milk: 10,
+      almond: 20,
+      soy: 30
     },
     beans: {
       brasil: 'Brazil',
@@ -46,9 +46,9 @@ export const PRODUCTS = [
       sizeL: 35.0
     },
     extra: {
-      milk: 'Mleko',
-      almond: 'Bademovo mleko',
-      soy: 'Sojino mleko'
+      milk: 10,
+      almond: 20,
+      soy: 30
     },
     beans: {
       brasil: 'Brazil',
@@ -68,9 +68,9 @@ export const PRODUCTS = [
       sizeL: 35.0
     },
     extra: {
-      milk: 'Mleko',
-      almond: 'Bademovo mleko',
-      soy: 'Sojino mleko'
+      milk: 10,
+      almond: 20,
+      soy: 30
     },
     beans: {
       brasil: 'Brazil',
@@ -90,9 +90,9 @@ export const PRODUCTS = [
       sizeL: 35.0
     },
     extra: {
-      milk: 'Mleko',
-      almond: 'Bademovo mleko',
-      soy: 'Sojino mleko'
+      milk: 10,
+      almond: 20,
+      soy: 30
     },
     beans: {
       brasil: 'Brazil',
@@ -112,9 +112,9 @@ export const PRODUCTS = [
       sizeL: 35.0
     },
     extra: {
-      milk: 'Mleko',
-      almond: 'Bademovo mleko',
-      soy: 'Sojino mleko'
+      milk: 10,
+      almond: 20,
+      soy: 30
     },
     beans: {
       brasil: 'Brazil',
@@ -134,9 +134,9 @@ export const PRODUCTS = [
       sizeL: 35.0
     },
     extra: {
-      milk: 'Mleko',
-      almond: 'Bademovo mleko',
-      soy: 'Sojino mleko'
+      milk: 10,
+      almond: 20,
+      soy: 30
     },
     beans: {
       brasil: 'Brazil',
@@ -156,9 +156,9 @@ export const PRODUCTS = [
       sizeL: 35.0
     },
     extra: {
-      milk: 'Mleko',
-      almond: 'Bademovo mleko',
-      soy: 'Sojino mleko'
+      milk: 10,
+      almond: 20,
+      soy: 30
     },
     beans: {
       brasil: 'Brazil',
@@ -178,9 +178,9 @@ export const PRODUCTS = [
       sizeL: 35.0
     },
     extra: {
-      milk: 'Mleko',
-      almond: 'Bademovo mleko',
-      soy: 'Sojino mleko'
+      milk: 10,
+      almond: 20,
+      soy: 30
     },
     beans: {
       brasil: 'Brazil',

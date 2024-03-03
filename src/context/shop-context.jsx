@@ -28,8 +28,8 @@ export const ShopContextProvider = (props) => {
         const itemInfo = PRODUCTS.find((product) => product.id === Number(itemId));
         const size = itemInfo.size;
        
-        totalAmount += (itemInfo.price + getSizePrice(itemInfo, size)) * quantity ;
-        console.log(getSizePrice(size))
+        totalAmount += (itemInfo.price) * quantity ;
+        
       }
       
 
@@ -87,6 +87,7 @@ export const ShopContextProvider = (props) => {
     getTotalCartAmount,
     checkout,
     getSizePrice,
+  
   };
 
   return (
