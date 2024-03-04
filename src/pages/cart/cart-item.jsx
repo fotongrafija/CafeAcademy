@@ -87,7 +87,7 @@ export const CartItem = (props) => {
           <p> Cena: <span>{price + sizePrice} RSD</span><SlArrowRight className="rightArrow" onClick={handleShowDescription}/></p>
         </div>
       </div>
-      {/* {showDescription && <CartItemDescription description={description}/>} */}
+      {showDescription && <CartItemDescription description={description}/>}
       
     </div>
     

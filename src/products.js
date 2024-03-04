@@ -39,7 +39,7 @@ export const PRODUCTS = [
     productName: "Espresso dugi",
     price: 130.0,
     productImage: product2,
-    description: "Espresso dugi je produžena verzija klasičnog espressa, pružajući isti ukusi karakter, ali sa malo više vode, što rezultira nešto blažom notom i produženim uživanjem u kafi.",
+    description: "Espresso dugi je produžena verzija klasičnog espressa, pružajući isti ukus i karakter, ali sa malo više vode, što rezultira nešto blažom notom i produženim uživanjem u kafi.",
     size: {
       sizeS: 0.0,
       sizeM: 10.0,

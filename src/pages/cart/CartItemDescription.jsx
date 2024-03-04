@@ -21,7 +21,7 @@ export const CartItemDescription = ({ description }) => {
         </div>
         <div className="backLower">
           
-            <SlArrowLeft onClick={handleBackClick} />
+            {/* <SlArrowLeft onClick={handleBackClick} /> */}
           
         </div>
       </div>

@@ -73,6 +73,14 @@
   margin-top: 10px;
 }
 
+.description .lower svg {
+  z-index: 20;
+}
+
+.description .lower svg:hover {
+  cursor: pointer;
+}
+
 .description .lower span {
   font-weight: 700;
 }
@@ -97,7 +105,8 @@
 }
 
 .description .upper .leftContent p {
-  
+  margin-bottom: 8px;
+  font-weight: 500;
   color: #FAF5E4;
   
 }
@@ -255,6 +264,39 @@
   
 }
 
+/* back desription card */
+
+.backDescription {
+  width: 35%;
+  height: 200px;
+  display: flex;
+  background: #164864;
+  align-items: center;
+  border-radius: 12px;
+  margin: 15px;
+  position: absolute;
+}
+
+.backDescription .flipDescription {
+  margin-left: 139px;
+  margin-top: 28px;
+  margin-right: 40px;
+  margin-bottom: 28px;
+}
+
+.backDescription .flipDescription .BackUpper .backContent p {
+  color: #FAF5E4;
+}
+
+.backDescription .flipDescription .BackUpper .backContent p:first-child {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.backDescription .flipDescription .BackUpper .backContent p:last-child {
+  font-weight: 300;
+}
+
 
 /* Responsive */
 
@@ -339,8 +381,39 @@
  }
 
  .lower svg {
-  display: none;
+  right: 12px;
+  top: 2px;
+  
  }
 
+ .backDescription {
+  width: 355px;
+  height: 200px;
+  display: flex;
+  background: #164864;
+  align-items: center;
+  border-radius: 12px;
+  margin: 15px;
+ }
+
+ .backDescription .flipDescription .BackUpper .backContent {
+  margin-top: -10px;
+ }
+
+ .backDescription .flipDescription .BackUpper .backContent p:last-child {
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 14px;
+ }
+
+ .backDescription .flipDescription .BackUpper .backContent p:first-child {
+  font-weight: 400;
+  font-size: 14px;
+ }
+
+ .backDescription .flipDescription {
+  margin-left: 94px;
+  margin-top: 17px;
+}
 
 }
