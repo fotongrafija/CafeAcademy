@@ -5,6 +5,8 @@
   align-items: center;
 }
 
+
+
 .cartItem {
   width: 100%;
   height: 200px;
@@ -57,10 +59,14 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #164864;
+  background: linear-gradient(180deg, #248CC5 0%, #164864 100%);
   border: none;
   color: #fff;
 }
+
+
+
+
 
 .description {
   
@@ -232,7 +238,7 @@
   height: 70px;
   position: sticky;
   bottom: 0;
-  z-index: 12;
+  z-index: 20;
   background: #fff;
   display: flex;
   justify-content: space-evenly;
@@ -267,13 +273,13 @@
 /* back desription card */
 
 .backDescription {
-  width: 35%;
+  width: 691px;
   height: 200px;
   display: flex;
-  background: #164864;
+  background: linear-gradient(180deg, #248CC5 0%, #164864 100%);
   align-items: center;
   border-radius: 12px;
-  margin: 15px;
+  
   position: absolute;
 }
 
@@ -301,6 +307,29 @@
 /* Responsive */
 
 @media screen and (max-width: 640px) {
+
+  .App .container {
+    width: 105%;
+  }
+
+  .cart .cartContainer {
+    width: 340px;
+  }
+
+  .checkout {
+    width: 110%;
+  }
+
+  .checkout .checkoutBtn {
+    width: 110px;
+    position: relative;
+  }
+
+  .checkout .checkoutBtn span {
+    position: absolute;
+    right: 13px;
+    top: 10px;
+  }
   
  .description .upper {
   position: relative;
@@ -387,13 +416,13 @@
  }
 
  .backDescription {
-  width: 355px;
+  width: 340px;
   height: 200px;
   display: flex;
-  background: #164864;
+  background: linear-gradient(180deg, #248CC5 0%, #164864 100%);
   align-items: center;
   border-radius: 12px;
-  margin: 15px;
+
  }
 
  .backDescription .flipDescription .BackUpper .backContent {
@@ -412,7 +441,7 @@
  }
 
  .backDescription .flipDescription {
-  margin-left: 94px;
+  margin-left: 110px;
   margin-top: 17px;
 }
 

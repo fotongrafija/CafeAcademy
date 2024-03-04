@@ -26,7 +26,7 @@ export const Cart = () => {
       <div>
         <h1></h1>
       </div>
-      <div className="cart">
+      <div className="cartContainer">
         {Object.entries(cartItems).map(([id, quantity]) => {
           const product = getProductById(parseInt(id)); // Product details by id
           if (product) {
@@ -50,7 +50,7 @@ export const Cart = () => {
               navigate("/");
             }}
           >
-            Poruči!
+            <span>Poruči!</span>
           </button>
         </div>
       ) : (
