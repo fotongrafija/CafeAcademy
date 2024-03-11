@@ -7,20 +7,29 @@ import { ShopContext } from "../../context/shop-context";
 import { CartItem } from "./cart-item";
 import { useNavigate } from "react-router-dom";
 import { PRODUCTS } from "../../products.js";
+import { SlArrowUp } from "react-icons/sl";
+import { Product } from "../shop/product.jsx";
 import "./cart.css";
 import './itemExtras.css'
 
 export const Cart = () => {
-  const { cartItems, getTotalCartAmount, checkout, getSizePrice, size } = useContext(ShopContext);
+  const { cartItems, getTotalCartAmount, checkout, id } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
   const navigate = useNavigate();
-  const sizeAmount = getSizePrice()
+  // const sizeAmount = getSizePrice()
   const getProductById = (id) => {
-  // PRODUCTS is an array of products
+  // PRODUCTS by ID
   return PRODUCTS.find((product) => product.id === id);
   };
   
   
+
+  const [cartClass, setCartClass] = useState(false)
+
+  const handleChangeCart = () => setCartClass(!cartClass)
+
+
+  console.log(cartClass)
   return (
     <div className="cart">
       <div>
@@ -30,7 +39,7 @@ export const Cart = () => {
         {Object.entries(cartItems).map(([id, quantity]) => {
           const product = getProductById(parseInt(id)); // Product details by id
           if (product) {
-            // Ensure product exists before rendering
+            // If product exists
             return <CartItem key={id} data={{ ...product, id, quantity }} />;
           } else {
             // When product is not found
@@ -40,8 +49,11 @@ export const Cart = () => {
         })}
       </div>
 
-      {totalAmount >= 0 ? (
-        <div className="checkout">
+      {totalAmount > 0 ? (
+        
+        <div className={`checkout ${cartClass ? 'activeCheckout' : ''}`}>
+          <SlArrowUp onClick={handleChangeCart}/>
+          
           <p> Ukupno: {totalAmount} RSD </p>
           <button
             className="checkoutBtn"
@@ -50,11 +62,11 @@ export const Cart = () => {
               navigate("/");
             }}
           >
-            <span>Poruči!</span>
+            <span>Poruči</span>
           </button>
         </div>
       ) : (
-        <h1> Your Shopping Cart is Empty</h1>
+        <h1>Korpa je prazna!</h1>
       )}
     </div>
   );

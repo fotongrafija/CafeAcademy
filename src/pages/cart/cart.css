@@ -5,7 +5,9 @@
   align-items: center;
 }
 
-
+.container {
+  z-index: 22;
+}
 
 .cartItem {
   width: 100%;
@@ -19,6 +21,28 @@
   margin: 15px;
 }
 
+.loginBtn {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 3.0599px 22.1843px;
+gap: 7.65px;
+width: 98px;
+height: 28px;
+background: #248CC5;
+border-radius: 6.1198px;
+z-index: 22;
+font-weight: 600;
+font-size: 12px;
+line-height: 16px;
+display: flex;
+align-items: center;
+letter-spacing: -0.244792px;
+color: #FFFFFF;
+
+
+}
 
 
 .cartItem .imgWrapper {
@@ -114,7 +138,7 @@
   margin-bottom: 8px;
   font-weight: 500;
   color: #FAF5E4;
-  
+  width: 123px;
 }
 
 .description .upper .rightContent {
@@ -143,6 +167,7 @@
 
 .cartItem .description .leftContent {
   width: 26%%;
+  height: 108px;
 }
 
 .cartItem .description .leftContent > p {
@@ -178,7 +203,57 @@
   gap: 2px;
   font-size: 12px;
   color: #FAF5E4;
+  
 }
+
+.middleContent .itemExtras #extras {
+  padding-left: 11px;
+  font-size: 12px;
+  width: 100px;
+  height: 28px;
+  background: #164864;
+  border: 1px solid #FAF5E4;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  color: #FAF5E4;
+  margin-bottom: 9px;
+  margin-top: 6px;
+}
+
+.middleContent .itemExtras > label:first-child {
+  background: #164864;
+  width: 68px;
+  padding-left: 6px;
+  position: absolute;
+  top: 2px;
+  left: 158px;
+ }
+
+.middleContent .itemExtras #beans {
+  padding-left: 11px;
+  font-size: 12px;
+  width: 100px;
+  height: 28px;
+  background: #164864;
+  border: 1px solid #FAF5E4;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  color: #FAF5E4;
+  margin-bottom: 9px;
+  margin-top: 6px;
+}
+
+.middleContent .itemExtras > label:last-of-type {
+  background: #164864;
+  width: 68px;
+  padding-left: 6px;
+  position: absolute;
+  top: 47px;
+  left: 158px;
+  color: #FAF5E4;
+  font-size: 12px;
+  
+ }
 
 .cartItem .description .middleContent .itemExtras select {
   height: 22px;
@@ -235,21 +310,34 @@
 }
 
 .checkout {
-  height: 70px;
+  height: min-content;
   position: sticky;
   bottom: 0;
   z-index: 20;
-  background: #fff;
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
+  /* width: 100%; */
   align-items: center;
+  width: 600px;
+  
+  left: calc(50% - 570px / 2);
+  background: #248CC5;
+  border-radius: 10px 10px 0 0;
+
+}
+
+.activeCheckout {
+  height: auto;
+
 }
 
 .checkout p {
   width: 170px;
   display: flex;
   align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
 }
 
 .checkout button {
@@ -273,7 +361,7 @@
 /* back desription card */
 
 .backDescription {
-  width: 691px;
+  width: 597px;
   height: 200px;
   display: flex;
   background: linear-gradient(180deg, #248CC5 0%, #164864 100%);
@@ -292,6 +380,9 @@
 
 .backDescription .flipDescription .BackUpper .backContent p {
   color: #FAF5E4;
+  font-size: 14px;
+  text-align: justify;
+  line-height: 15px;
 }
 
 .backDescription .flipDescription .BackUpper .backContent p:first-child {
@@ -317,7 +408,18 @@
   }
 
   .checkout {
-    width: 110%;
+    height: 40px;
+    position: sticky;
+    bottom: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: space-evenly;
+    /* width: 100%; */
+    align-items: center;
+    width: 340px;
+    left: calc(50% - 337px / 2);
+    background: #248CC5;
+    border-radius: 10px 10px 0 0;
   }
 
   .checkout .checkoutBtn {
@@ -328,7 +430,20 @@
   .checkout .checkoutBtn span {
     position: absolute;
     right: 13px;
-    top: 10px;
+    top: 0;
+  }
+
+  .cartItem img {
+    width: 50px;
+  }
+
+  .cartItem .imgWrapper {
+    height: 40%;
+    margin-bottom: 91px;
+  }
+
+  .cartItem .imgWrapper .splash {
+    top: 13px;
   }
   
  .description .upper {
@@ -339,7 +454,7 @@
  .leftContent .coffeeSize {
   position: absolute;
   top: 22px;
-  left: 120px;
+  left: 111px;
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -347,6 +462,7 @@
 
  .leftContent > p {
   margin-top: -8px;
+  font-size: 14px;
  }
 
  .leftContent .coffeeSize p {
@@ -357,6 +473,9 @@
   align-items: center;
   display: flex;
  }
+ .cartItem .description .leftContent .coffeeSize .coffeeSizeLabel input.radioSize {
+  transform: scale(1.8);
+ }
 
  .cartItem .splash {
   top: 24px;
@@ -364,43 +483,97 @@
 
  .middleContent .itemExtras {
   position: absolute;
-  top: 34px;
+  top: 39px;
   left: 2px;
+  
  }
+
+ .middleContent .itemExtras > label:first-child {
+  background: #164864;
+  width: 68px;
+  padding-left: 6px;
+  position: absolute;
+  top: -5px;
+  left: 11px;
+ }
+
+ .middleContent .itemExtras > label:last-of-type {
+  background: #164864;
+  width: 68px;
+  padding-left: 6px;
+  position: absolute;
+  top: 35px;
+  left: 11px;
+  color: #FAF5E4;
+  font-size: 12px;
+  
+ }
+
+.middleContent .itemExtras #extras {
+  padding-left: 11px;
+  font-size: 10px;
+  width: 98px;
+  height: 23px;
+  background: #164864;
+  border: 1px solid #FAF5E4;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  color: #FAF5E4;
+  margin-bottom: 9px;
+  margin-top: 6px;
+}
+
+.middleContent .itemExtras #beans {
+  padding-left: 11px;
+  font-size: 10px;
+  width: 98px;
+  height: 24px;
+  background: #164864;
+  border: 1px solid #FAF5E4;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  color: #FAF5E4;
+}
 
  .countHandler {
   transform: scale(0.8);
   height: 123px;
-  width: 63px;
+  width: 51px;
  }
  .countHandler .btn {
   transform: scale(1.2);
-  width: 41px;
+  width: 34px;
   height: 34px;
  }
 
  .rightContent .countHandler .btn .minus {
-  top: -10px;
+  top: -11px;
+  right: 9px;
  }
 
  .rightContent .countHandler .btn .plus {
-  top: -7px;
-  right: 9px;
+  top: -8px;
+  right: 6px;
  }
 
  .countHandler .btn:first-child {
   bottom: 11px;
-  left: 11px;
+  left: 8px;
  }
 
  .countHandler .btn:last-child {
   top: 11px;
-  right: 11px;
+  right: 8px;
  }
 
  .description .upper .rightContent {
   width: 21%;
  }
+
+ .rightContent {
+  width: 22%;
+ }
+
  .rightContent p {
   display: none;
  }
@@ -431,13 +604,15 @@
 
  .backDescription .flipDescription .BackUpper .backContent p:last-child {
   font-weight: 200;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 11px;
+  line-height: 13px;
  }
 
  .backDescription .flipDescription .BackUpper .backContent p:first-child {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 11px;
+  line-height: 12px;
+  display: none;
  }
 
  .backDescription .flipDescription {
