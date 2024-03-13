@@ -19,6 +19,26 @@
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   margin: 15px;
+
+  /* 3d flip code */
+
+  perspective: 1000px; /* Set the perspective */
+  /* backface-visibility: hidden; */
+  /* transform-style: preserve-3d; */
+  /* transition: transform 0.5s; */
+  /* transform: rotateX(180deg); */
+  /* backface-visibility: hidden; */
+}
+
+/* .backFlip .cartItem {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  transform: rotateX(180deg);
+} */
+
+.cartItem .backDescription {
+  /* Your styles for the back side of the card */
+  /* transform: rotateY(180deg); */
 }
 
 .loginBtn {
@@ -310,7 +330,7 @@ color: #FFFFFF;
 }
 
 .checkout {
-  height: min-content;
+  height: 60px;
   position: sticky;
   bottom: 0;
   z-index: 20;
@@ -369,6 +389,8 @@ color: #FFFFFF;
   border-radius: 12px;
   
   position: absolute;
+  /* transform: rotateX(180deg); */
+  /* transform-style: preserve-3d; */
 }
 
 .backDescription .flipDescription {
@@ -408,7 +430,7 @@ color: #FFFFFF;
   }
 
   .checkout {
-    height: 40px;
+    height: 60px;
     position: sticky;
     bottom: 0;
     z-index: 20;

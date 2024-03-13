@@ -16,7 +16,7 @@ export const CartItem = (props) => {
   // const [newValue, setNewValue] = useState(null); 
   // const [sizePrice, setSizePrice] = useState('');
   const [showDescription, setShowDescription] = useState(false)
-  
+  const [isBackFlipped, setIsBackFlipped] = useState(false); // State to track if the card is flipped
 //console.log(sizePrices)
   const [selectedSize, setSelectedSize] = useState(''); // State to store the selected size
   const [sizePrice, setSizePrice] = useState(0); // State to store the size price
@@ -43,6 +43,7 @@ export const CartItem = (props) => {
 
   const handleShowDescription = () => {
     setShowDescription(prevState => !prevState)
+    setIsBackFlipped(!isBackFlipped);
   }
   const handleInputChange = (newValue) => {
   
@@ -80,12 +81,12 @@ export const CartItem = (props) => {
  
   return (<>
   
-    <div className="cartItem">
+    <div className='cartItem'>
       <div className="imgWrapper">
         <div className="splash"></div>
         <img src={productImage} alt=''/>
       </div>
-      <div className="description">
+      <div className={`description ${isBackFlipped ? 'backFlip' : ''}`}>
         <div className="upper">
           <div className="leftContent">
             <p>{productName}</p>

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import "./loginForm.css";
 import logo from "../assets/logo.svg"
 import inputAlert from "../assets/inputAlert.svg"
+import { Link } from 'react-router-dom';
 
 
 export const LoginForm = () => {
@@ -62,7 +63,7 @@ export const LoginForm = () => {
                 </div>
             </form>
             
-            <p className='newUser'>Još uvek nemate kreiran nalog?<span><a href="/register">Registrujte se</a>.</span></p>
+            <p className='newUser'>Još uvek nemate kreiran nalog?<span><Link to='/register'><a href="/register">Registrujte se</a></Link>.</span></p>
         </div>
       </div>
     );

@@ -66,7 +66,7 @@ export const Cart = () => {
           </button>
         </div>
       ) : (
-        <h1>Korpa je prazna!</h1>
+        <h1></h1>
       )}
     </div>
   );
