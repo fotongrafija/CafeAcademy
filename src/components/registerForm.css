@@ -1,0 +1,158 @@
+/* RegisterForm CSS */
+
+.registerFormContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(170.99deg, #164864 4.6%, #248CC5 72.55%, #248CC5 100.99%);
+  }
+  
+  .navBackground {
+    background-color: #FFFFFF;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+  }
+  
+  .registerFormWrapper {
+    position: absolute;
+    top: 98px;
+    left: calc(50% - 340px / 2);
+    width: 340px;
+    height: 650px;
+    background: #FFFFFF;
+    border: 1px solid #164864;
+    box-shadow: 0px 258px 103px rgba(0, 0, 0, 0.01), 0px 145px 87px rgba(0, 0, 0, 0.05), 0px 64px 64px rgba(0, 0, 0, 0.09), 0px 16px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+  
+  .registerLogo {
+    margin-top: 58px;
+    width: 178px;
+  }
+  
+  .registerFormWrapper h2 {
+    margin-bottom: 4px;
+    margin-top: 16px;
+    /* Registracija */
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: -0.32px;
+    color: #404040;
+  }
+  
+  .registerForm .nameWrapper,
+  .registerForm .emailWrapper,
+  .registerForm .passwordWrapper {
+    display: grid;
+    margin-top: 25px;
+  }
+  
+  .registerForm .nameWrapper label,
+  .registerForm .emailWrapper label,
+  .registerForm .passwordWrapper label {
+    width: 116.28px;
+    height: 19px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #164864;
+  }
+  
+  .registerForm .nameWrapper input,
+  .registerForm .emailWrapper input,
+  .registerForm .passwordWrapper input {
+    padding: 8px;
+    gap: 10px;
+    border: 0px;
+    width: 282px;
+    height: 37px;
+    background: #E8E8E8;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+  }
+  
+  .registerForm .nameWrapper input::placeholder,
+  .registerForm .emailWrapper input::placeholder,
+  .registerForm .passwordWrapper input::placeholder {
+    /* Unesite Ime i Prezime, Unesite Email adresu, Unesite lozinku */
+    font-style: italic;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 21px;
+    color: #7D7D7D;
+  }
+  
+  .registerForm p {
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .registerForm p a {
+    /* Prijavite se */
+    width: 139.22px;
+    height: 10.8px;
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration-line: underline;
+    color: rgba(36, 140, 197, 0.8);
+  }
+  
+  .registerForm .loginFormBtn {
+    padding: 10px 97px;
+    gap: 10px;
+    width: 282px;
+    height: 41px;
+    border: 0;
+    background: linear-gradient(180deg, #164864 0.59%, #2C91CA 214.21%), linear-gradient(180deg, #164864 0.59%, #2C91CA 214.21%);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 32px;
+  }
+  
+  .registerFormWrapper .newUser {
+    /* Već imate nalog? */
+    font-weight: 500;
+    font-size: 12px;
+    color: #474747;
+  }
+  
+  .registerFormWrapper .newUser span a {
+    /* Prijavite se */
+    font-weight: 600;
+    font-size: 12px;
+    margin-left: 4px;
+    text-decoration-line: underline;
+    color: #248CC5;
+  }
+  
+  .registerBtn {
+    margin-top: 40px;
+  }
+
+  .inputAlert {
+    /* Uneli ste pogrešnu lozinku. Pokušajte ponovo. */
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: -0.32px;
+    color: #EE3C3C;
+    margin-top: 8px;
+    display: flex;
+  }
+
+  .inputAlert img {
+    margin-right: 5px;
+    height: 16px;
+    width: 16px;
+  }

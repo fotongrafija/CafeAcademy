@@ -2,12 +2,13 @@ import React from 'react'
 import { useState } from 'react';
 import "./loginForm.css";
 import logo from "../assets/logo.svg"
-
+import inputAlert from "../assets/inputAlert.svg"
 
 
 export const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [wrongPassword, setWrongPassword] = useState(false)
   
     const handleEmailChange = (e) => {
       setEmail(e.target.value);
@@ -20,6 +21,7 @@ export const LoginForm = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       // Add your login logic here
+      if (password !== password) setWrongPassword(true)
       console.log('Email:', email);
       console.log('Password:', password);
     };
@@ -52,6 +54,7 @@ export const LoginForm = () => {
                         onChange={handlePasswordChange}
                         required
                     />
+                    {wrongPassword && <span className='inputAlert'><img src={inputAlert} alt="" />Uneli ste pogrešnu lozinku. Pokušajte ponovo.</span>}
                 </div>
                 <p className='lostPass'><a href="/reset">Zaboravili ste lozinku?</a></p>
                 <div>

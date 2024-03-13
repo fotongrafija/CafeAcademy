@@ -8,6 +8,7 @@ import { ShopContextProvider } from "./context/shop-context";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { LoginForm } from "./components/LoginForm";
+import { RegisterForm } from "./components/RegisterForm";
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
           <Routes>
             {/* <Route path="/" element={<Login />} /> */}
             <Route path="/login" element={<LoginForm />}/>
-            <Route path="/register" element={<LoginForm />}/>
+            <Route path="/register" element={<RegisterForm />}/>
+            
             {/* <Route path="/" element={<Shop />} /> */}
             {/* <Route path="/contact" element={<Contact />} /> */}
             <Route path="/" element={<Cart />} />

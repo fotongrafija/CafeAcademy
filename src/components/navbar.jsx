@@ -4,8 +4,12 @@ import { ShoppingCart, SignIn } from "phosphor-react";
 import logo from "../assets/logo.svg"
 import "./navbar.css";
 import { Login } from "./Login";
+import { RegisterForm } from "./RegisterForm";
 
 export const Navbar = () => {
+
+
+
   return ( <div className="container">
     <div className="navbar">
       <Link to="/"><img className="logo" src={logo}  alt="CoffeShop Logo" /></Link>
@@ -17,6 +21,7 @@ export const Navbar = () => {
           <Login />
           {/* <SignIn size={32} /> */}
         </Link>
+        
       </div>
     </div>
     </div>

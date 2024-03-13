@@ -361,7 +361,7 @@ color: #FFFFFF;
 /* back desription card */
 
 .backDescription {
-  width: 597px;
+  width: 600px;
   height: 200px;
   display: flex;
   background: linear-gradient(180deg, #248CC5 0%, #164864 100%);
