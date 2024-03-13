@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './registerForm.css'
 import logo from "../assets/logo.svg"
 import inputAlert from "../assets/inputAlert.svg"
-
+import { Link } from 'react-router-dom';
 
 export const RegisterForm = () => {
     const [fullName, setFullName] = useState('');
@@ -108,7 +108,7 @@ export const RegisterForm = () => {
                 </div>
                 </form>
                 <p className='newUser'>
-                Već imate nalog? <span><a href="/login">Prijavite se</a></span>.
+                Već imate nalog? <span><Link to='/login'><a href="/login">Prijavite se</a></Link></span>.
                 </p>
             </div>
       </div>
