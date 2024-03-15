@@ -20,8 +20,20 @@ export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
   // const [size, setSize] = useState('')
   const [sizePrices, setSizePrices] = useState({}); // Maintain size prices for each item
+  
 
 
+  const chosenItems = () => {
+    const items = [];
+    for (const itemId in cartItems) {
+      const quantity = cartItems[itemId];
+      if (quantity > 0) {
+        const itemInfo = PRODUCTS.find((product) => product.id === Number(itemId));
+        items.push({ ...itemInfo, quantity });
+      }
+    }
+    return items;
+  };
  
 // Function to get size price based on item ID and selected size
   const getSizePriceForItem = (itemId, selectedSize) => {
@@ -97,6 +109,7 @@ export const ShopContextProvider = (props) => {
     getTotalCartAmount,
     checkout,
     ItemExtras,
+    chosenItems, // items in cart
     sizePrices, // to receives value from CartItem
     setSizePrices, // updates value in CartItem component
     getSizePriceForItem // function for finding the product with id and switch itemInfo.size

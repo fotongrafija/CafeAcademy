@@ -7,6 +7,7 @@ import { SlArrowRight } from "react-icons/sl";
 import { CartItemDescription } from "./CartItemDescription";
 import { ReactCardFlip } from "react-card-flip";
 import { ItemExtras } from "./ItemExtras";
+import { ChosenItems } from "./ChosenItems";
 
 
 export const CartItem = (props) => {
@@ -82,6 +83,7 @@ export const CartItem = (props) => {
   return (<>
   
     <div className='cartItem'>
+      
       <div className="imgWrapper">
         <div className="splash"></div>
         <img src={productImage} alt=''/>
@@ -124,6 +126,7 @@ export const CartItem = (props) => {
         </div>
         <div className="lower">
           <p> Cena: <span>{totalPrice} RSD</span><SlArrowRight className="rightArrow" onClick={handleShowDescription}/></p>
+         
         </div>
       </div>
       {showDescription && <CartItemDescription description={description}/>}

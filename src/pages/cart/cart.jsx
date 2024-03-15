@@ -9,8 +9,10 @@ import { useNavigate } from "react-router-dom";
 import { PRODUCTS } from "../../products.js";
 import { SlArrowUp } from "react-icons/sl";
 import { Product } from "../shop/product.jsx";
+import  checkoutIcon  from "../../assets/checkoutIcon.svg"
 import "./cart.css";
 import './itemExtras.css'
+import { ChosenItems } from "./ChosenItems.jsx";
 
 export const Cart = () => {
   const { cartItems, getTotalCartAmount, checkout, id } = useContext(ShopContext);
@@ -52,18 +54,23 @@ export const Cart = () => {
       {totalAmount > 0 ? (
         
         <div className={`checkout ${cartClass ? 'activeCheckout' : ''}`}>
-          <SlArrowUp onClick={handleChangeCart}/>
-          
-          <p> Ukupno: {totalAmount} RSD </p>
-          <button
-            className="checkoutBtn"
-            onClick={() => {
-              checkout();
-              navigate("/");
-            }}
-          >
-            <span>Poruči</span>
-          </button>
+          <div className="checkoutUpper">
+            {/* <SlArrowUp onClick={handleChangeCart}/> */}
+            <div className="swipeLine" onClick={handleChangeCart}></div>
+            <p> Ukupno: {totalAmount} RSD </p>
+            <button
+              className="checkoutBtn"
+              onClick={() => {
+                checkout();
+                navigate("/");
+              }}
+            >
+              <img src={checkoutIcon} alt="" /><span>Naruči</span>
+            </button>
+          </div>  
+          <div className={`chosenItemsWrapper ${cartClass ? 'activeCheckout' : ''}`}>
+            <ChosenItems />
+          </div>
         </div>
       ) : (
         <h1></h1>

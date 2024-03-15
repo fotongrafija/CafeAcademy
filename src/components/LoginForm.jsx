@@ -4,6 +4,7 @@ import "./loginForm.css";
 import logo from "../assets/logo.svg"
 import inputAlert from "../assets/inputAlert.svg"
 import { Link } from 'react-router-dom';
+import { ChosenItems } from '../pages/cart/ChosenItems';
 
 
 export const LoginForm = () => {
@@ -45,6 +46,7 @@ export const LoginForm = () => {
                         required
                     />
                 </div>
+                
                 <div className='passwordWrapper'>
                     <label htmlFor="password" className='passForm'>Password:</label>
                     <input
@@ -57,7 +59,7 @@ export const LoginForm = () => {
                     />
                     {wrongPassword && <span className='inputAlert'><img src={inputAlert} alt="" />Uneli ste pogrešnu lozinku. Pokušajte ponovo.</span>}
                 </div>
-                <p className='lostPass'><a href="/reset">Zaboravili ste lozinku?</a></p>
+                <p className='lostPass'><Link to='/reset'><a href="/reset">Zaboravili ste lozinku?</a></Link></p>
                 <div>
                     <button type="submit" className='loginFormBtn'>Prijavi se</button>
                 </div>
