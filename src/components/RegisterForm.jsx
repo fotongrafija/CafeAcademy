@@ -39,7 +39,7 @@ export const RegisterForm = () => {
       e.preventDefault();
       if (password !== confirmPassword) {
         setPasswordMismatch(true);
-        return;
+        return
       }
       // Add your registration logic here
       const [firstName, ...lastNameArray] = fullName.split(' ');
@@ -48,6 +48,7 @@ export const RegisterForm = () => {
       console.log('Last Name:', lastName);
       console.log('Email:', email);
       console.log('Password:', password);
+      
     };
   
     return (
@@ -60,7 +61,7 @@ export const RegisterForm = () => {
                 <div className="nameWrapper">
                     <label htmlFor="fullName">Ime i prezime:</label>
                     <input
-                    placeholder='Unesite Ime i Prezime'
+                    placeholder='Unesite ime i prezime'
                     type="text"
                     id="fullName"
                     value={fullName}
@@ -101,7 +102,7 @@ export const RegisterForm = () => {
                     onChange={handleConfirmPasswordChange}
                     required
                     />
-                    {passwordMismatch && <span className='inputAlert'><img src={inputAlert} alt="" />Lozinke se ne podudaraju. Pokusajte ponovo.</span>}
+                    {passwordMismatch && <span className='inputAlert'><img src={inputAlert} alt="" />Lozinke se ne podudaraju. Pokušajte ponovo.</span>}
                 </div>
                 <div>
                     <button type="submit" className='loginFormBtn registerBtn'>Registruj se</button>

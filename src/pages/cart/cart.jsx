@@ -31,7 +31,7 @@ export const Cart = () => {
   const handleChangeCart = () => setCartClass(!cartClass)
 
 
-  console.log(cartClass)
+  
   return (
     <div className="cart">
       <div>
@@ -54,7 +54,7 @@ export const Cart = () => {
       {totalAmount > 0 ? (
         
         <div className={`checkout ${cartClass ? 'activeCheckout' : ''}`}>
-          <div className="checkoutUpper">
+          <div className={`checkoutUpper ${cartClass ? 'activeCheckout' : ''}`}>
             {/* <SlArrowUp onClick={handleChangeCart}/> */}
             <div className="swipeLine" onClick={handleChangeCart}></div>
             <p> Ukupno: {totalAmount} RSD </p>

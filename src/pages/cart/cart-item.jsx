@@ -1,44 +1,50 @@
 
 // cart-item.jsx
 
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { ShopContext } from "../../context/shop-context";
 import { SlArrowRight } from "react-icons/sl";
 import { CartItemDescription } from "./CartItemDescription";
-import { ReactCardFlip } from "react-card-flip";
+
 import { ItemExtras } from "./ItemExtras";
-import { ChosenItems } from "./ChosenItems";
+
 
 
 export const CartItem = (props) => {
-  const { id, productName, price, productImage, description, size, extra, beans } = props.data;
+  const { id, productName, price, productImage, description } = props.data;
   const { cartItems, addToCart, removeFromCart, updateCartItemCount, getSizePriceForItem, sizePrices, setSizePrices } = useContext(ShopContext);
   
-  // const [newValue, setNewValue] = useState(null); 
-  // const [sizePrice, setSizePrice] = useState('');
+
   const [showDescription, setShowDescription] = useState(false)
   const [isBackFlipped, setIsBackFlipped] = useState(false); // State to track if the card is flipped
-//console.log(sizePrices)
+
   const [selectedSize, setSelectedSize] = useState(''); // State to store the selected size
   const [sizePrice, setSizePrice] = useState(0); // State to store the size price
 
-  // Function to update size prices
-  // const updateSizePrices = (id, size, price) => {
-  //   setSizePrices((prevSizePrices) => ({
-  //     ...prevSizePrices,
-  //     [id]: { ...prevSizePrices[id], [size]: price },
-  //   }));
-  // };
+  //Function to update size prices
+  const updateSizePrices = (id, size, price) => {
+    setSizePrices((prevSizePrices) => ({
+      [id]: { ...prevSizePrices[id], [size]: price },
+    }));
+  };
+
  const handleChangePrice = (sizeIndex) => {
-    //setSelectedSize(sizeIndex); // Update selectedSize state
- 
-    
-    if (sizeIndex === 'sizeS') setSizePrice(0)
-    if (sizeIndex === 'sizeM') setSizePrice(10)
-    if (sizeIndex === 'sizeL') setSizePrice(20)
-    return setSizePrices(sizePrice)
+
+    if (sizeIndex === 'sizeS') {
+      setSizePrice(0)
+    } else if (sizeIndex === 'sizeM') {
+      setSizePrice(10)
+    } else if (sizeIndex === 'sizeL') {
+      setSizePrice(20)
+    } else {
+      setSizePrice('')
+    }
+    console.log(sizePrices)
+    return  setSizePrices(sizePrice) 
    
   };
+
+  
 
 
 
@@ -54,27 +60,6 @@ export const CartItem = (props) => {
   };
 
   
-
-
- 
-  
-  
-  // const handleChangePrice = (sizeIndex) => {
-  //   switch (sizeIndex) {
-  //     case 'S':
-  //       setSizePrice(size.sizeS);
-  //       break;
-  //     case 'M':
-  //       setSizePrice(size.sizeM);
-  //       break;
-  //     case 'L':
-  //       setSizePrice(size.sizeL);
-  //       break;
-  //     default:
-  //       setSizePrice(0);
-  //   }
-  
-  // };
   
   // Calculate total price by adding the price and sizePrice
   const totalPrice = price + sizePrice;
@@ -136,11 +121,6 @@ export const CartItem = (props) => {
     </>
   );
 };
-
-
-
-
-
 
 
 

@@ -6,7 +6,7 @@ import { PRODUCTS } from '../../products'
 
 
 
-export const ItemExtras = (props) => {
+export const ItemExtras = () => {
     
     
 

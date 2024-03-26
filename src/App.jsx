@@ -9,7 +9,8 @@ import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { LoginForm } from "./components/LoginForm";
 import { RegisterForm } from "./components/RegisterForm";
-
+import { RestartPassword } from "./components/RestartPassword";
+import { SuccesfulReg } from "./components/SuccesfulReg";
 
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
             {/* <Route path="/" element={<Login />} /> */}
             <Route path="/login" element={<LoginForm />}/>
             <Route path="/register" element={<RegisterForm />}/>
-            
+            <Route path="/reset" element={<RestartPassword />}/>
+            <Route path="/successfulReg" element={<SuccesfulReg />}/>
             {/* <Route path="/" element={<Shop />} /> */}
             {/* <Route path="/contact" element={<Contact />} /> */}
             <Route path="/" element={<Cart />} />

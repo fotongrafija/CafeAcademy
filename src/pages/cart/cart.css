@@ -36,10 +36,7 @@
   transform: rotateX(180deg);
 } */
 
-.cartItem .backDescription {
-  /* Your styles for the back side of the card */
-  /* transform: rotateY(180deg); */
-}
+
 
 .loginBtn {
 display: flex;
@@ -109,12 +106,6 @@ color: #FFFFFF;
 }
 
 
-
-
-
-.description {
-  
-}
 
 .description .lower {
   font-size: 16px;
@@ -186,7 +177,7 @@ color: #FFFFFF;
 }
 
 .cartItem .description .leftContent {
-  width: 26%%;
+  width: 26%;
   height: 108px;
 }
 
@@ -347,11 +338,12 @@ color: #FFFFFF;
   display: flex;
     flex-direction: column;
     margin-bottom: 28.5px;
+    
 }
 
 .activeCheckout {
   height: auto;
-
+  
 }
 
 .checkout p {
@@ -431,10 +423,15 @@ justify-content: space-around;
 width: 550px;
 margin-bottom: 28px;
 padding-bottom: 20px;
-padding-top: 50px;
+padding-top: 20px;
 border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 align-items: end;
 }
+
+.checkout .checkoutUpper.activeCheckout {
+  padding-top: 20px;
+}
+
 .checkout .swipeLine {
   /* Rectangle 22929 */
   top: 8px;
@@ -483,11 +480,13 @@ color: #FFFFFF;
 
   .checkout .chosenItemsWrapper {
     display: none;
+    
   }
 
   .checkout .chosenItemsWrapper.activeCheckout {
     display: block;
     margin-bottom: 40px;
+    
   }
 
 /* back desription card */
@@ -502,7 +501,7 @@ color: #FFFFFF;
   
   position: absolute;
   /* transform: rotateX(180deg); */
-  /* transform-style: preserve-3d; */
+  transform-style: preserve-3d;
 }
 
 .backDescription .flipDescription {
@@ -572,6 +571,7 @@ color: #FFFFFF;
   }
   .checkout .checkoutUpper {
     width: 307px;
+    padding-top: 20px;
   }
 
   .checkout .checkoutBtn {

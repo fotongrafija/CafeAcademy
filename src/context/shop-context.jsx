@@ -16,12 +16,23 @@ const getDefaultCart = () => {
   return cart;
 };
 
+
+
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
   // const [size, setSize] = useState('')
   const [sizePrices, setSizePrices] = useState({}); // Maintain size prices for each item
   
+  const [isLoggedIn, setIsLoggedIn] = useState(false) //if user is LoggedIn or not
 
+
+  function logIn() {
+    setIsLoggedIn(true)
+  }
+
+  function logOut() {
+    setIsLoggedIn(false)
+  }
 
   const chosenItems = () => {
     const items = [];
@@ -43,13 +54,13 @@ export const ShopContextProvider = (props) => {
     const size = itemInfo.size;
     switch (selectedSize) {
       case 'sizeS':
-        return size.sizeS;
+        return size[sizeS];
       case 'sizeM':
-        return size.sizeM;
+        return size[sizeM];
       case 'sizeL':
-        return size.sizeL;
-      // default:
-      //   return 0; // Default to 0 if size is not recognized
+        return size[sizeL];
+       default:
+        return 0; // Default to 0 if size is not recognized
     }
   };
 
@@ -60,7 +71,8 @@ export const ShopContextProvider = (props) => {
       const quantity = cartItems[itemId];
       if (quantity > 0) {
         const itemInfo = PRODUCTS.find((product) => product.id === Number(itemId));
-        //const selectedSize = getSizePriceForItem(itemId); // Get selected size for the item
+        const selectedSize = getSizePriceForItem(itemId); // Get selected size for the item
+        console.log(selectedSize)
         totalAmount += (itemInfo.price + sizePrices) * quantity ;
         
       }
@@ -112,7 +124,10 @@ export const ShopContextProvider = (props) => {
     chosenItems, // items in cart
     sizePrices, // to receives value from CartItem
     setSizePrices, // updates value in CartItem component
-    getSizePriceForItem // function for finding the product with id and switch itemInfo.size
+    getSizePriceForItem, // function for finding the product with id and switch itemInfo.size
+    isLoggedIn,
+    logIn,
+    logOut
   };
 
   return (
