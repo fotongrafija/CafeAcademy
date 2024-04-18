@@ -3,7 +3,7 @@ import { useState } from 'react';
 import "./loginForm.css";
 import logo from "../assets/logo.svg"
 import inputAlert from "../assets/inputAlert.svg"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChosenItems } from '../pages/cart/ChosenItems';
 import { ShopContext } from "../context/shop-context";
 
@@ -13,6 +13,9 @@ export const LoginForm = () => {
     const [wrongPassword, setWrongPassword] = useState(false)
   
     const {isLoggedIn, logIn, logOut} = useContext(ShopContext)
+
+
+    const navigate = useNavigate()
 
     const handleEmailChange = (e) => {
       setEmail(e.target.value);
@@ -24,12 +27,14 @@ export const LoginForm = () => {
   
     const handleSubmit = (e) => {
       e.preventDefault();
+      
       // Add your login logic here
       if (password !== password) setWrongPassword(true)
       console.log('Email:', email);
       console.log('Password:', password);
       
       logIn()
+      navigate('/')
     };
   
     return (

@@ -8,13 +8,11 @@
   
 }
 .logo {
-/* margin-left: 50px; */
 height: 35px;
 }
+
 .links {
-  /* margin-right: 50px; */
   display: flex;
-  
   align-items: center;
 }
 
@@ -45,7 +43,6 @@ height: 35px;
 }
 
 .userMenuContainer.activeClass {
-  
   position: absolute;
   left: -21px;
   top: 43px;
@@ -58,7 +55,6 @@ height: 35px;
 }
 
 .userMenuContainer.hiddenClass {
-  /* display: none; */
   left: -21px;
   position: absolute;
   z-index: -1;
@@ -73,7 +69,6 @@ height: 35px;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.52);
 }
 
-
 .userMenuContainer .logout {
   display: flex;
   padding-bottom: 7.3px;
@@ -85,10 +80,6 @@ padding-left: 8px;
 font-weight: 500;
 font-size: 12px;
 line-height: 21px;
-
 letter-spacing: -0.32px;
-
 color: #FFFFFF;
-
-
 }

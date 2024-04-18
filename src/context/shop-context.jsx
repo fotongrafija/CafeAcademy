@@ -1,7 +1,7 @@
 
 // shop-context.jsx
 
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { PRODUCTS } from "../products";
 import { ItemExtras } from "../pages/cart/ItemExtras";
 
@@ -18,13 +18,15 @@ const getDefaultCart = () => {
 
 
 
+
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
-  // const [size, setSize] = useState('')
-  const [sizePrices, setSizePrices] = useState({}); // Maintain size prices for each item
+  
+  const [cartItemsPrice, setCartItemsPrice] = useState(null)
   
   const [isLoggedIn, setIsLoggedIn] = useState(false) //if user is LoggedIn or not
 
+ 
 
   function logIn() {
     setIsLoggedIn(true)
@@ -48,22 +50,31 @@ export const ShopContextProvider = (props) => {
  
 // Function to get size price based on item ID and selected size
   const getSizePriceForItem = (itemId, selectedSize) => {
-    const itemInfo = PRODUCTS.find((product) => product.id === itemId);
-    if (!itemInfo) return 0; // Return 0 if item not found
+    const itemInfo = PRODUCTS.find((product) => product.id === Number(itemId));
+    if (!itemInfo) return 'nije pronadjen info'; // Return 0 if item not found
 
-    const size = itemInfo.size;
+    const SIZE = itemInfo.size;
     switch (selectedSize) {
       case 'sizeS':
-        return size[sizeS];
+        return SIZE.sizeS;
       case 'sizeM':
-        return size[sizeM];
+        return SIZE.sizeM;
       case 'sizeL':
-        return size[sizeL];
+        return SIZE.sizeL;
        default:
-        return 0; // Default to 0 if size is not recognized
+        return null; // Default to 0 if size is not recognized
     }
   };
 
+  // const itemSizePrice = () => {
+  //   const sizePrice = 0
+  //   for (const itemId in cartItemsPrice) {
+  //     const addAmount = cartItemsPrice[itemId]
+  //     return sizePrice
+      
+  //   }
+  // }
+  // itemSizePrice()
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
@@ -71,9 +82,8 @@ export const ShopContextProvider = (props) => {
       const quantity = cartItems[itemId];
       if (quantity > 0) {
         const itemInfo = PRODUCTS.find((product) => product.id === Number(itemId));
-        const selectedSize = getSizePriceForItem(itemId); // Get selected size for the item
-        console.log(selectedSize)
-        totalAmount += (itemInfo.price + sizePrices) * quantity ;
+        
+        totalAmount += (itemInfo.price + Number(cartItemsPrice?.[itemId])) * quantity ;
         
       }
    
@@ -109,26 +119,35 @@ export const ShopContextProvider = (props) => {
     }));
   };
 
+  const updateCartItemSize = (sizeIndex, itemId) => {
+    setCartItemsPrice((prev) => ({
+      ...prev,
+      [itemId]: sizeIndex
+    }))
+  }
+  console.log(cartItemsPrice)
+
   const checkout = () => {
     setCartItems(getDefaultCart());
   };
 
   const contextValue = {
+    cartItemsPrice,
     cartItems,
     addToCart,
+    updateCartItemSize,
     updateCartItemCount,
     removeFromCart,
     getTotalCartAmount,
     checkout,
     ItemExtras,
     chosenItems, // items in cart
-    sizePrices, // to receives value from CartItem
-    setSizePrices, // updates value in CartItem component
     getSizePriceForItem, // function for finding the product with id and switch itemInfo.size
     isLoggedIn,
     logIn,
     logOut
   };
+  
 
   return (
     <ShopContext.Provider value={contextValue}>

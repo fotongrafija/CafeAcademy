@@ -57,10 +57,7 @@ display: flex;
 align-items: center;
 letter-spacing: -0.244792px;
 color: #FFFFFF;
-
-
 }
-
 
 .cartItem .imgWrapper {
   width: 120px;
@@ -96,7 +93,6 @@ color: #FFFFFF;
 }
 
 .btn {
-  
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -105,6 +101,16 @@ color: #FFFFFF;
   color: #fff;
 }
 
+.btn-disabled {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #a4b3bb 0%, #474b4e 100%);
+  border: none;
+  
+  color: #A9A9A9; /* Dark grey text */
+  cursor: not-allowed; /* Shows a 'not allowed' cursor when you hover over the button */
+}
 
 
 .description .lower {
@@ -153,7 +159,6 @@ color: #FFFFFF;
 }
 
 .description .upper .rightContent {
-  /* margin-top: 23px; */
   width: 39%;
   text-align: center;
 }
@@ -171,7 +176,6 @@ color: #FFFFFF;
   margin-right: 15px;
   margin-left: 15px;
   width: 100%;
-  /* font-size: 30px; */
   display: flex;
   justify-content: space-between;
 }
@@ -256,7 +260,7 @@ color: #FFFFFF;
 
 .middleContent .itemExtras > label:last-of-type {
   background: #164864;
-  width: 68px;
+  width: 45px;
   padding-left: 6px;
   position: absolute;
   top: 47px;
@@ -287,6 +291,13 @@ color: #FFFFFF;
   position: absolute;
 }
 
+.countHandler .btn-disabled {
+  transform: scale(1.5);
+  position: absolute;
+}
+
+
+
 .countHandler .btn span.minus {
   font-size: 40px;
   top: -7px; 
@@ -294,6 +305,15 @@ color: #FFFFFF;
   right: 12px;
   color: #FAF5E4;
 }
+
+.countHandler .btn-disabled span.minus {
+  font-size: 40px;
+  top: -7px; 
+  position: absolute;
+  right: 12px;
+  color: #FAF5E4;
+}
+
 
 .countHandler .btn span.plus {
   font-size: 38px;
@@ -303,11 +323,35 @@ color: #FFFFFF;
   color: #FAF5E4;
 }
 
+
+
+.countHandler .btn-disabled span.plus {
+  font-size: 38px;
+  top: -4px; 
+  position: absolute;
+  right: 8px;
+  color: #FAF5E4;
+}
+
+
+
+
+
 .countHandler .btn:first-child {
   left: 17px;
 }
 
+.countHandler .btn-disabled:first-child {
+  left: 17px;
+}
+
+
+
 .countHandler .btn:last-child {
+  right: 17px;
+}
+
+.countHandler .btn-disabled:last-child {
   right: 17px;
 }
 
@@ -657,7 +701,7 @@ color: #FFFFFF;
 
  .middleContent .itemExtras > label:last-of-type {
   background: #164864;
-  width: 68px;
+  width: 45px;
   padding-left: 6px;
   position: absolute;
   top: 35px;

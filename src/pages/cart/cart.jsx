@@ -15,10 +15,10 @@ import './itemExtras.css'
 import { ChosenItems } from "./ChosenItems.jsx";
 
 export const Cart = () => {
-  const { cartItems, getTotalCartAmount, checkout, id } = useContext(ShopContext);
+  const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
   const navigate = useNavigate();
-  // const sizeAmount = getSizePrice()
+  
   const getProductById = (id) => {
   // PRODUCTS by ID
   return PRODUCTS.find((product) => product.id === id);
@@ -28,7 +28,7 @@ export const Cart = () => {
 
   const [cartClass, setCartClass] = useState(false)
 
-  const handleChangeCart = () => setCartClass(!cartClass)
+  const handleChangeCart = () => setCartClass(oldState => !oldState)
 
 
   
@@ -38,11 +38,11 @@ export const Cart = () => {
         <h1></h1>
       </div>
       <div className="cartContainer">
-        {Object.entries(cartItems).map(([id, quantity]) => {
+        {Object.entries(cartItems).map(([id, quantity, size]) => {
           const product = getProductById(parseInt(id)); // Product details by id
           if (product) {
             // If product exists
-            return <CartItem key={id} data={{ ...product, id, quantity }} />;
+            return <CartItem key={id} data={{ ...product, id, quantity, size }} />;
           } else {
             // When product is not found
             console.error(`Product with id ${id} not found.`);
@@ -55,7 +55,7 @@ export const Cart = () => {
         
         <div className={`checkout ${cartClass ? 'activeCheckout' : ''}`}>
           <div className={`checkoutUpper ${cartClass ? 'activeCheckout' : ''}`}>
-            {/* <SlArrowUp onClick={handleChangeCart}/> */}
+            
             <div className="swipeLine" onClick={handleChangeCart}></div>
             <p> Ukupno: {totalAmount} RSD </p>
             <button

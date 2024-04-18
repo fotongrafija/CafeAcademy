@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import itemRemoveIcon from "../../assets/itemRemoveIcon.svg"
 
 export const ChosenItems = () => {
-    const { chosenItems, removeFromCart, sizePrices } = useContext(ShopContext);
+    const { chosenItems, removeFromCart } = useContext(ShopContext);
 
   const handleRemoveItem = (itemId) => {
     removeFromCart(itemId);
